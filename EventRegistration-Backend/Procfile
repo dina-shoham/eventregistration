@@ -1,0 +1,3 @@
+
+heroku config:add PROCFILE=EventRegistration-Backend/Procfile --app eventregistration-backend-1357
+
