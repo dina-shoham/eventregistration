@@ -6,24 +6,24 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Registration{
-private Integer id;
+private int id;
    
-   public void setId(Integer value) {
+   public void setId(int value) {
 this.id = value;
     }
 @Id
-public Integer getId() {
+public int getId() {
 return this.id;
     }
-private RegistrationManager registrationManager;
+private Person person;
 
 @ManyToOne(optional=false)
-public RegistrationManager getRegistrationManager() {
-   return this.registrationManager;
+public Person getPerson() {
+   return this.person;
 }
 
-public void setRegistrationManager(RegistrationManager registrationManager) {
-   this.registrationManager = registrationManager;
+public void setPerson(Person person) {
+   this.person = person;
 }
 
 private Event event;
@@ -35,17 +35,6 @@ public Event getEvent() {
 
 public void setEvent(Event event) {
    this.event = event;
-}
-
-private Person participant;
-
-@ManyToOne(optional=false)
-public Person getParticipant() {
-   return this.participant;
-}
-
-public void setParticipant(Person participant) {
-   this.participant = participant;
 }
 
 }

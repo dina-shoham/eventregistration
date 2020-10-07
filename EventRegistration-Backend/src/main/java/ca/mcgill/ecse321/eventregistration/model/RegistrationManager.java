@@ -1,36 +1,27 @@
 package ca.mcgill.ecse321.eventregistration.model;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
+import javax.persistence.Id;
 
 @Entity
 public class RegistrationManager{
-private Integer id;
-   
-   public void setId(Integer value) {
-this.id = value;
-    }
-@Id
-public Integer getId() {
-return this.id;
-    }
-private Set<Person> participants;
+private Set<Person> persons;
 
-@OneToMany(mappedBy="registrationManager", cascade={CascadeType.ALL})
-public Set<Person> getParticipants() {
-   return this.participants;
+@OneToMany(cascade={CascadeType.ALL})
+public Set<Person> getPersons() {
+   return this.persons;
 }
 
-public void setParticipants(Set<Person> participantss) {
-   this.participants = participantss;
+public void setPersons(Set<Person> personss) {
+   this.persons = personss;
 }
 
 private Set<Registration> registrations;
 
-@OneToMany(mappedBy="registrationManager", cascade={CascadeType.ALL})
+@OneToMany(cascade={CascadeType.ALL})
 public Set<Registration> getRegistrations() {
    return this.registrations;
 }
@@ -41,7 +32,7 @@ public void setRegistrations(Set<Registration> registrationss) {
 
 private Set<Event> events;
 
-@OneToMany(mappedBy="registrationManager", cascade={CascadeType.ALL})
+@OneToMany(cascade={CascadeType.ALL})
 public Set<Event> getEvents() {
    return this.events;
 }
@@ -50,4 +41,13 @@ public void setEvents(Set<Event> eventss) {
    this.events = eventss;
 }
 
-}
+private int id;
+
+public void setId(int value) {
+this.id = value;
+    }
+@Id
+public int getId() {
+return this.id;
+       }
+   }

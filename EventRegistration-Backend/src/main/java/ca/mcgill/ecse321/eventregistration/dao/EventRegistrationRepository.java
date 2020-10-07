@@ -38,7 +38,7 @@ public class EventRegistrationRepository {
 	public Event createEvent(String name, Date date, Time startTime, Time endTime) {
 		Event e = new Event();
 		e.setName(name);
-		e.setEventDate(date);
+		e.setDate(date);
 		e.setStartTime(startTime);
 		e.setEndTime(endTime);
 		entityManager.persist(e);

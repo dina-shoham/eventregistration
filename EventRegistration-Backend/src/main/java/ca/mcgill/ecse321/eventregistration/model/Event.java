@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Date;
 import java.sql.Time;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class Event{
@@ -17,13 +16,13 @@ this.name = value;
 public String getName() {
 return this.name;
     }
-private Date eventDate;
+private Date date;
 
-public void setEventDate(Date value) {
-this.eventDate = value;
+public void setDate(Date value) {
+this.date = value;
     }
-public Date getEventDate() {
-return this.eventDate;
+public Date getDate() {
+return this.date;
     }
 private Time startTime;
 
@@ -40,20 +39,5 @@ this.endTime = value;
     }
 public Time getEndTime() {
 return this.endTime;
-    }
-private RegistrationManager registrationManager;
-
-@ManyToOne(optional=false)
-public RegistrationManager getRegistrationManager() {
-   return this.registrationManager;
-}
-
-public void setRegistrationManager(RegistrationManager registrationManager) {
-   this.registrationManager = registrationManager;
-}
-public void setDate(Date date) {
-	// TODO Auto-generated method stub
-	
-}
-
-}
+       }
+   }
