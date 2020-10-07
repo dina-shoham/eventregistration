@@ -51,5 +51,9 @@ public RegistrationManager getRegistrationManager() {
 public void setRegistrationManager(RegistrationManager registrationManager) {
    this.registrationManager = registrationManager;
 }
+public void setDate(Date date) {
+	// TODO Auto-generated method stub
+	
+}
 
 }
